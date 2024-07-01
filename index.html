@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Crypto Tracker</h1>
+        <input type="text" id="search" placeholder="Search coins..." oninput="searchCoins(this.value)">
+        <button onclick="location.href='favorites.html'">Liked Coins</button>
+    </header>
+    <table id="crypto-table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Icon</th>
+                <th>Name</th>
+                <th>
+                    Price
+                    <i id="sort-price-asc" class="fa-solid fa-arrow-up" onclick="sortTableByPrice(true)"></i>
+                    <i id="sort-price-desc" class="fa-solid fa-arrow-down" onclick="sortTableByPrice(false)"></i>
+                </th>
+                <th>
+                    Volume
+                    <i id="sort-volume-asc" class="fa-solid fa-arrow-up" onclick="sortTableByVolume(true)"></i>
+                    <i id="sort-volume-desc" class="fa-solid fa-arrow-down" onclick="sortTableByVolume(false)"></i>
+                </th>
+                <th>Market Cap</th>
+                <th>Favorites</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be inserted here -->
+        </tbody>
+    </table>
+    <div id="pagination">
+        <button onclick="prevPage()">Previous</button>
+        <span id="page-number">1</span>
+        <button onclick="nextPage()">Next</button>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
